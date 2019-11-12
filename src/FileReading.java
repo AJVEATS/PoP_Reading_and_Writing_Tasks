@@ -52,7 +52,11 @@ public class FileReading {
 		File file = new File(fileName);
 		Scanner scan = new Scanner(file);
 		for( int i = 0; i < numbers.length; i++) {
-			numbers[i] = scan.nextInt();
+			if( scan.hasNextLine()) {
+				numbers[i] = scan.nextInt();
+			} else {
+				numbers[i] = 0;
+			}
 		}
 		scan.close();
 		return numbers;
