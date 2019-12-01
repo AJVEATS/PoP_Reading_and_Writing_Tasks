@@ -62,11 +62,24 @@ public class FileReading {
 		return numbers;
 	}
 	
-	/*Task5 
-	public ?? readNumbers2(??)  {
-		??
+	//Task 5
+	
+	public int[] readNumbers2(String fileName) throws Exception {
+		int[] numbers = new int[20];
+		File file = new File(fileName);
+		Scanner scan = new Scanner(file);
+		for( int i = 0; i < numbers.length; i++) {
+			if( scan.hasNextLine()) {
+				numbers[i] = scan.nextInt();
+			} else if ( numbers[i].toString() >= 5) {
+				numbers[i] = 0;
+			} else {
+				numbers[i] = 0;
+			}
+		}
+		scan.close();
+		return numbers;
 	}
-	*/
 	
 	/*Task 6 
 	public ?? readAddressBook(??)  {
